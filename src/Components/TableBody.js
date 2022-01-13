@@ -2,12 +2,11 @@ import React from 'react'
 
 function TableBody({items}) {
     const values= [];
-    console.log(items);
+    
     for(var i=0;i<items.length;i++){
         const val=Object.values(items[i]);
         values.push(val);
     }
-    console.log(values);
 
     return (
         <tbody className='table'>

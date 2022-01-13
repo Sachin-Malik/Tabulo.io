@@ -5,7 +5,7 @@ import TableBody from './TableBody';
 function Table(props) {
     return (
         <table className='table table-striped table-bordered table-hover'>
-            <TableHeading headings={props.items[0]}/>
+            <TableHeading headings={props.items[0]} sortPrices={props.sortPrices}/>
             <TableBody items={props.items}/>
         </table>
     )
