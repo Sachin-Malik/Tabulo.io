@@ -1,11 +1,13 @@
 import React from 'react'
 import SearchBar from './SearchBar'
-function FilterNav({search,resetSearch}) {
+import TypeFilter from './TypeFilter'
 
-   
+function FilterNav({checkBoxClicked,checkBoxes,updateSearch}) {
+
     return (
-        <div className='row float-right mr-2 mb-3'>
-            <SearchBar search={search} resetSearch={resetSearch} />
+        <div className='row mx-0 mb-3'>
+            <TypeFilter checkBoxClicked={checkBoxClicked} checkBoxes={checkBoxes} />
+            <SearchBar updateSearch={updateSearch} />
         </div>
     )
 }

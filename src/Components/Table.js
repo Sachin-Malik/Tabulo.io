@@ -2,11 +2,11 @@ import React from 'react'
 import TableHeading from './TableHeading';
 import TableBody from './TableBody';
 
-function Table(props) {
+function Table({items,sortPrices}) {
     return (
         <table className='table table-striped table-bordered table-hover'>
-            <TableHeading headings={props.items[0]} sortPrices={props.sortPrices}/>
-            <TableBody items={props.items}/>
+            <TableHeading headings={items[0]} sortPrices={sortPrices}/>
+            <TableBody items={items} />
         </table>
     )
 }
