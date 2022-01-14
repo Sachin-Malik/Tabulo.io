@@ -1,9 +1,16 @@
 import React from 'react'
 import DropDown from './DropDown'
-function TypeFilter({checkBoxClicked,checkBoxes}) {
+import ItemsPerPage from './ItemsPerPage'
+
+function TypeFilter({checkBoxClicked,checkBoxes,itemsPerPage,updateItemsPerPage}) {
     
     return (
-       <DropDown checkBoxClicked={checkBoxClicked} checkBoxes={checkBoxes}/>
+        <div className='col'>
+         <div className='row justify-content-start'>
+         <DropDown checkBoxClicked={checkBoxClicked} checkBoxes={checkBoxes}/>
+         <ItemsPerPage itemsPerPage={itemsPerPage} updateItemsPerPage={updateItemsPerPage}/>
+        </div>
+       </div>
     )
 }
 

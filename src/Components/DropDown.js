@@ -1,11 +1,10 @@
 import React from 'react'
-import optionList from '../optionList'
+import optionList from '../data/optionList'
 
 function DropDown({checkBoxClicked,checkBoxes}) {
     return (
-        <div className='col'>
-        <div className='row justify-content-start'>
-        <div className="dropdown show">
+       
+        <div className="dropdown show mr-2">
         <a className="btn btn-secondary dropdown-toggle" href="!#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Meals Filter
         </a>
@@ -18,8 +17,7 @@ function DropDown({checkBoxClicked,checkBoxes}) {
           })}
         </div>
       </div>
-      </div>
-      </div>
+     
     )
 }
 

@@ -1,16 +1,18 @@
 import {useState} from 'react';
 
 import Table from './Components/Table'
-import Items from './Items'
+import Items from './data/Items'
 import Pagination from './Components/Pagination'
 import FilterNav from './Components/FilterNav'
 import NoResult from './Components/NoResult'
-import DropDownOptions from './optionList'
+import DropDownOptions from './data/optionList'
+import ItemsPerPageOptions from './data/ITEM_PER_PAGE'
+
 
 function App() {
 
   const [currentPage,setCurrentPage]=useState(1);
-  const [itemsPerPage,setItemsPerPate]=useState(7);
+  const [itemsPerPage,setItemsPerPate]=useState(ItemsPerPageOptions[1]);
   const [searchTerm,setSearchTerm]=useState('');
   const [sortOrder,setSortOrder]=useState(0);
   const [checkBoxes,setCheckBoxes]=useState([true,true,true,true]);
@@ -91,10 +93,21 @@ function App() {
        setCheckBoxes(new Array(DropDownOptions.length).fill(true));
   }
 
+  const updateItemsPerPage = (newItemsPerPage) =>{
+        setItemsPerPate(newItemsPerPage);
+  }
+
   return (
     <div className="container">
       <h1 className="my-5 text-center">Tabulo.io</h1>
-       <FilterNav checkBoxClicked={updateCheckBoxes} checkBoxes={checkBoxes} updateSearch={updateSearchTerm} resetFilters={resetFilters}/>
+       <FilterNav 
+        checkBoxClicked={updateCheckBoxes} 
+        checkBoxes={checkBoxes} 
+        updateSearch={updateSearchTerm} 
+        resetFilters={resetFilters}
+        itemsPerPage={itemsPerPage}
+        updateItemsPerPage={updateItemsPerPage}
+       />
        {items.length!==0?<Table items={currentItems}  sortPrices={sortPrices} pageInfo={currentPageInfo}/>:null}
        {items.length!==0?<Pagination itemsPerPage={itemsPerPage} totalItems={items.length} paginate={paginate}/>:
         <NoResult />}
