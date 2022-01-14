@@ -39,11 +39,22 @@ function App() {
   }
   items=temp;
 
+  // handle sort change
+  if(sortOrder===1){
+    items.sort((a,b)=>(a.price<b.price)?1:-1);
+  }else if(sortOrder===2){
+    items.sort((a,b)=>(a.price>b.price)?1:-1);
+  }
+
   const indexOfLastItem= currentPage*itemsPerPage;
   const indexOfFirstItem= indexOfLastItem-itemsPerPage;
   const currentItems = items.slice(indexOfFirstItem,indexOfLastItem);
   
-
+  var currentPageInfo= {
+     firstIndex:indexOfFirstItem,
+     itemsPerPage:itemsPerPage,
+     totalItems:items.length
+  }
   //change page
   const paginate = (pageNumber) => {
     setCurrentPage(pageNumber);
@@ -55,7 +66,8 @@ function App() {
   }
   
   const updateCheckBoxes = (index)=>{
-      console.log(index+' clicked')
+      //TODO: find some other solution. two setState function. redndering twice.
+      setCurrentPage(1);
       const newConfiguration=[];
       for(let i=0;i<checkBoxes.length;i++){
          newConfiguration.push(i===index?!checkBoxes[i]:checkBoxes[i])
@@ -65,12 +77,10 @@ function App() {
 
   const sortPrices = () =>{
        if(sortOrder===0){
-          //sort ascending
-          items.sort((a,b)=>(a.price<b.price)?1:-1);
           setSortOrder(1);
        }else if(sortOrder===1){
-         //sort descending
-         items.sort((a,b)=>(a.price>b.price)?1:-1);
+         setSortOrder(2);
+       }else{
          setSortOrder(0);
        }
   }
@@ -79,7 +89,7 @@ function App() {
     <div className="container">
       <h1 className="my-5 text-center">Tabulo.io</h1>
        <FilterNav checkBoxClicked={updateCheckBoxes} checkBoxes={checkBoxes} updateSearch={updateSearchTerm}/>
-       {items.length!==0?<Table items={currentItems}  sortPrices={sortPrices}/>:null}
+       {items.length!==0?<Table items={currentItems}  sortPrices={sortPrices} pageInfo={currentPageInfo}/>:null}
        {items.length!==0?<Pagination itemsPerPage={itemsPerPage} totalItems={items.length} paginate={paginate}/>:
         <NoResult />}
     </div>
