@@ -85,10 +85,16 @@ function App() {
        }
   }
   
+  const resetFilters = () =>{
+       console.log('Reset Filter');
+       setSearchTerm('');
+       setCheckBoxes(new Array(DropDownOptions.length).fill(true));
+  }
+
   return (
     <div className="container">
       <h1 className="my-5 text-center">Tabulo.io</h1>
-       <FilterNav checkBoxClicked={updateCheckBoxes} checkBoxes={checkBoxes} updateSearch={updateSearchTerm}/>
+       <FilterNav checkBoxClicked={updateCheckBoxes} checkBoxes={checkBoxes} updateSearch={updateSearchTerm} resetFilters={resetFilters}/>
        {items.length!==0?<Table items={currentItems}  sortPrices={sortPrices} pageInfo={currentPageInfo}/>:null}
        {items.length!==0?<Pagination itemsPerPage={itemsPerPage} totalItems={items.length} paginate={paginate}/>:
         <NoResult />}

@@ -1,6 +1,6 @@
 import React,{useState} from 'react'
 
-function SearchBar({updateSearch}) {
+function SearchBar({updateSearch,resetFilters}) {
     const [searchTerm,setSearchTerm]=useState('');
     
     const handleSearchTermChange=(event)=>{
@@ -20,7 +20,7 @@ function SearchBar({updateSearch}) {
                 className=' btn btn-sm btn-primary ml-2' 
                 onClick={()=>updateSearch(searchTerm)}
                 >Search</button>
-            <button className="btn btn-primary ml-2"> <i className="bi bi-arrow-counterclockwise fa-5x"></i></button>
+            <button className="btn btn-primary ml-2" onClick={resetFilters} > <i className="bi bi-arrow-counterclockwise fa-5x"></i></button>
         </div>
         </div>
     )
