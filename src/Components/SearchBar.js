@@ -14,13 +14,14 @@ function SearchBar({updateSearch,resetFilters}) {
             <input type='text' className='mr-2 px-3'
                 value={searchTerm} 
                 onChange={handleSearchTermChange}
-                placeholder='Have something on mind'
+                placeholder='craving something..'
             />
             <button type='button' 
-                className=' btn btn-sm btn-primary ml-2' 
+                style={{color:'white'}}
+                className='btn btn-sm filter-bg' 
                 onClick={()=>updateSearch(searchTerm)}
                 >Search</button>
-            <button className="btn btn-primary ml-2" onClick={resetFilters} > <i className="bi bi-arrow-counterclockwise fa-5x"></i></button>
+            <button className="btn ml-2 filter-bg" style={{color:'white'}} onClick={resetFilters} > <i className="bi bi-arrow-counterclockwise"></i></button>
         </div>
         </div>
     )

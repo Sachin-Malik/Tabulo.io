@@ -5,7 +5,7 @@ function DropDown({checkBoxClicked,checkBoxes}) {
     return (
        
         <div className="dropdown show mr-2">
-        <a className="btn btn-secondary dropdown-toggle" href="!#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a className="btn white-text filter-bg dropdown-toggle" href="!#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Meals Filter
         </a>
         
