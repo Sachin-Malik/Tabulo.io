@@ -1,0 +1,34 @@
+body{
+  background:#e0ebe8;
+}
+
+.heading{
+  font-family:'Montserrat', sans-serif;
+  font-size: 900;
+  color: #1e836c;
+}
+.filter-bg{
+  background: #45b29a;
+}
+
+.table-bg{
+  font-family: 'Dongle', sans-serif;
+  font-weight: 300;
+  font-size: 1.4rem;
+}
+.sort-arrow:hover{
+    cursor: pointer;
+}
+.white-text{
+  color: #ffffff;
+}
+.btn:hover{
+  color: #ffffff;
+}
+.no-result{
+  background: url(./no_result.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 400px;
+ 
+}
