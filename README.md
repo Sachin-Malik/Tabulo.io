@@ -1,70 +1,44 @@
-# Getting Started with Create React App
+# Tabulo.io
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+### `Major Features of Tabulo.io`
 
-In the project directory, you can run:
+1.  Search By {Name} property.
+2.  Filter by {Meal} type i.e. Main Course, Appetizers, Dessert and drink.
+3.  Sort the items on basis of {price}
+4.  Let user select number of items they want to see per page.
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### `Major Components`
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. `<Table />` It is the main table and consist of following components.  
+   
+    `<TableInfo />`  This component show the info about items rendered on table. i.e what are you looking at.  
 
-### `npm test`
+    `<TableHeading />` This render the headging for the table.  
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+    `<TableBody />` This renderes the table body i.e. rows of the table.  
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. `<FilterNav />` All Filters that can be applied to table. i.e Meals Filter, Items per page and search.
+    
+    `<DropDown />` Meal Dropdown. this let to select type of items you want to see in your query result.  
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+    `<ItemsPerPage />` This let you select how many result per page you want to see.  
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    `<Search /> `This return result according to your search term.  
 
-### `npm run eject`
+    `<ResetFilters>` This reset all filter. i.e show whole menu.  
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+3.  `<Pagination />` Implement pagination for the current query result.  
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### `Improvements to Come`
 
-## Learn More
+1. Search Improvement  
+   At the moment search run on 'search' button click. I want to upgrade it to 'Debounced Search' Which runs search query when user types into search with some 'Debouncing Time'
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+2. Responsive  
+   At the moment is only renders beautifully for large and medium screen. It renders horribly for small devices i.e mobile and small ipads.

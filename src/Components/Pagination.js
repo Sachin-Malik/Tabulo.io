@@ -12,7 +12,7 @@ function Pagination({itemsPerPage,totalItems,paginate}) {
             <ul className="pagination">
             {pageNumber.map((number,id)=>(
                <li key={id} className='page-item'>
-                   <a href='!#' onClick={()=>paginate(number)} className='page-link'>{number}</a>
+                   <a onClick={()=>paginate(number)} className='page-link'>{number}</a>
                </li>
             ))}
             </ul>
